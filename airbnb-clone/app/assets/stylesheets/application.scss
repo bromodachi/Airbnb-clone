@@ -206,3 +206,18 @@ input[type="checkbox"]:checked:before {
 .panel-heading.preview img{
   width: 100%;
 }
+
+.addImageRE img{
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.amenities li{
+  margin-bottom: 10px;
+  list-style-type: none;
+}
+
+.text-line-through{
+  text-decoration: line-through;
+}
