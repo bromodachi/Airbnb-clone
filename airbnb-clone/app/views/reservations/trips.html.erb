@@ -1,11 +1,11 @@
 <div class="row">
      <div class="col-md-3">
        <ul class="sidebar-list">
-         <li class="sidebar-item">
-           <%= link_to "Your Trips", trips_path, class:"sidebar-link" %>
+       <li class="sidebar-item">
+           <%= link_to "Your Trips", trips_path, class:"sidebar-link active" %>
          </li>
          <li class="sidebar-item">
-           <%= link_to "Listings", rooms_path, class:"sidebar-link active" %>
+           <%= link_to "Listings", rooms_path, class:"sidebar-link" %>
          </li>
          <li class="sidebar-item">
            <%= link_to "Reservaton", rooms_path, class:"sidebar-link" %>
@@ -18,23 +18,26 @@
       <div class="col-md-9">
         <div class="panel panel-default">
           <div class="panel-heading">
-            Listings
+            Trips
           </div>
           <div class="panel-body">
-            <% @rooms.each do |room| %>
+            <% @trips.each do |trip| %>
               <div class="row">
                 <div class="col-md-2">
-                  <%= link_to room_path(room) do %>
-                   <%= image_tag room.photos[0].image.url(:thumb)  if room.photos.length > 0 %>
+                  <%= trip.start_date.strftime('%v') %>
+                </div>
+                <div class="col-md-6">
+                <%= link_to room_path(trip.room) do %>
+                  <%= image_tag trip.room.photos[0].image.url(:thumb) %>
                   <% end %>
                 </div>
-                <div class="col-md-7">
-                  <%= link_to room_path(room) do %>
-                  <h4> <%= room.listing_name %></h4>
-                  <% end%>
+                <div class="col-md-2">
+                <%= link_to user_path(trip.room.user) do %>
+                  <%= image_tag avatar_url(trip.room.user), class: "img-circle avatar-medium" %>
+                  <% end %>
                 </div>
-                <div class="col-md-3 right">
-                  <%= link_to "Update", edit_room_path(room), class:"btn btn-primary" %>
+                <div class="col-md-2 right">
+                  <h4> <%= trip.total %></h4>
                 </div>
               </div>
                 <hr>
