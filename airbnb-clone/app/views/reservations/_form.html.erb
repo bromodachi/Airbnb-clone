@@ -106,7 +106,7 @@
                   $('#btn_book').attr('disabled', false);
 
                   var total = days * <%= @room.price %>
-                  $('#reservation_days').text(days);
+                      $('#reservation_days').text(days);
                   $('#reservation_sum').text(total);
                   $('#reservation_total').val(total);
                 }
@@ -150,7 +150,7 @@
                   $('#btn_book').attr('disabled', false);
 
                   var total = days * <%= @room.price %>
-                  $('#reservation_days').text(days);
+                      $('#reservation_days').text(days);
                   $('#reservation_sum').text(total);
                   $('#reservation_total').val(total);
                 }
@@ -162,7 +162,7 @@
       }
     });
 
-    
+
 
   });
 </script>

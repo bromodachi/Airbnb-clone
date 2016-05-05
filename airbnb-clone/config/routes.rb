@@ -15,7 +15,10 @@ Rails.application.routes.draw do
 
   resources :rooms do
     resources :reservations, only: [:create]
+    resources :reviews, only: [:create, :destroy]
   end
+
+
 
   resources :conversations, only:[:index, :create] do
     resources :messages, only: [:index, :create]
@@ -26,4 +29,9 @@ Rails.application.routes.draw do
   get '/preview' => 'reservations#preview'
   get '/trips' => 'reservations#trips'
   get '/your_reservations' => 'reservations#your_reservations'
+
+  post '/notify' => 'reservations#notify'
+  post '/trips' => 'reservations#trips'
+
+  get '/search' => 'pages#search'
 end

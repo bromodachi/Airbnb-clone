@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
 
   has_many :rooms
   has_many :reservations
+  has_many :reviews
 
   #with out creating a new instance user variable
   def self.from_omniauth(auth)

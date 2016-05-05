@@ -13,6 +13,7 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
+//= require private_pub
 //= require jquery-ui/datepicker
 //= require toastr
 //= require_tree .
